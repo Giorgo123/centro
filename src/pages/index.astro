@@ -15,17 +15,18 @@ import Team from "../components/Team.astro";
     <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Centro de Dia</title>
+    <title>INSERIR</title>
   </head>
   <body>
     <Navbar />
     <Hero />
-    <SideBySide />
-    <Team />
-    <Pricing />
+    <!-- <SideBySide /> -->
+    <!-- <Team /> -->
+    <!-- <Pricing /> -->
     <Reviews />
-    <CTA />
+    <!-- <CTA /> -->
     <Footer />
+    <div class="fade-in"></div>
   </body>
 </html>
 
@@ -103,6 +104,27 @@ import Team from "../components/Team.astro";
     margin: 0;
     color: var(--bodyTextColor);
   }
+
+
+    /* Estilos para el contenedor de fade-in */
+.fade-in {
+    opacity: 0; /* Inicialmente, ocultar el contenido */
+    transition: opacity 1s ease; /* Agregar una transición de opacidad */
+}
+
+/* Estilos para el contenido que aparece gradualmente */
+.fade-in.show {
+    opacity: 1; /* Mostrar el contenido con opacidad completa */
+}
+
+
+
 </style>
 
-<style></style>
+<script>document.addEventListener("DOMContentLoaded", function() {
+  const fadeInElements = document.querySelectorAll('.fade-in');
+  fadeInElements.forEach(element => {
+      element.classList.add('show'); // Agregar la clase 'show' para activar la transición de fade-in
+  });
+});
+</script>

@@ -10,14 +10,18 @@
     </a>
     <!--Navigation List-->
     <nav class="cs-nav" role="navigation" >
+
+
       <!--Mobile Nav Toggle-->
-      <!-- <button class="cs-toggle" aria-label="mobile menu toggle">
+      <button class="cs-toggle" aria-label="mobile menu toggle">
         <div class="cs-box" aria-hidden="true">
           <span class="cs-line cs-line1" aria-hidden="true"></span>
           <span class="cs-line cs-line2" aria-hidden="true"></span>
           <span class="cs-line cs-line3" aria-hidden="true"></span>
         </div>
-      </button> -->
+      </button>
+
+
       <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
       <div class="cs-ul-wrapper">
         <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
@@ -42,336 +46,155 @@
   </div>
 </header>
 
-<style>
-  /*-- -------------------------- -->
-<---     Mobile Navigation      -->
-<--- -------------------------- -*/
-
- 
+<style>/*-- -------------------------- -->
+  <---     Mobile Navigation      -->
+  <--- -------------------------- -*/
+  
   body,
   html {
-    /* reset margin and padding so there's no gap between the nav and the screen edges */
-    margin: 0;
-       padding: 0;
+      /* reset margin and padding so there's no gap between the nav and the screen edges */
+      margin: 0;
+         padding: 0;
   }
 
-  /* Mobile - 1023px */
-  @media only screen and (max-width: 63.9375rem) {
-    body.cs-open {
-      overflow: hidden;
-    }
-    #cs-navigation {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      /* prevents padding and border from affecting height and width */
-      box-sizing: border-box;
-      background-color: #fff;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      position: fixed;
-      z-index: 10000;
-    }
-    #cs-navigation:before {
-      content: "";
-      width: 100%;
-      height: 0vh;
-      background: rgba(0, 0, 0, 0.6);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      position: absolute;
-      display: block;
-      top: 100%;
-      right: 0;
-      z-index: -1100;
-      opacity: 0;
-      transition:
-        height 0.5s,
-        opacity 0.5s;
-    }
-    #cs-navigation.cs-active:before {
-      height: 150vh;
-      opacity: 1;
-    }
-    #cs-navigation.cs-active .cs-ul-wrapper {
-      opacity: 1;
-      transform: scaleY(1);
-      transition-delay: 0.15s;
-      border: black;
-      border-radius: 20%;
-      border
-    }
-    #cs-navigation.cs-active .cs-li {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    #cs-navigation .cs-container {
-      width: 100%;
-      display:block;
-      /* justify-content: flex-end; */
-      align-items: center;
-    }
-    #cs-navigation .cs-logo {
-      width: 180%; /* Ajusta el ancho del logo según sea necesario */
-    height: auto; /* Mantiene la proporción del logo */
-    display: block; /* Hace que el logo sea un elemento de bloquaae */
-    margin: 0 auto; /* Centra el logo horizontalmente */
-    }
-    #cs-navigation .cs-logo img {
-      width: 180%;
-      height: 150px;
-      /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
-      object-fit: contain;
-      /* text-align: center;
-      justify-content: center; */
-    }
-    #cs-navigation .cs-toggle {
-      /* 44px - 48px */
-      width: clamp(2.75rem, 6vw, 3rem);
-      height: clamp(2.75rem, 6vw, 3rem);
-      margin: 0 0 0 auto;
-      border-radius: 0.25rem;
-      background-color: transparent;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #cs-navigation .cs-active .cs-line1 {
-      top: 50%;
-      transform: translate(-50%, -50%) rotate(225deg);
-    }
-    #cs-navigation .cs-active .cs-line2 {
-      top: 50%;
-      transform-origin: center;
-      transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
-    }
-    #cs-navigation .cs-active .cs-line3 {
-      bottom: 100%;
-      opacity: 0;
-    }
-    #cs-navigation .cs-box {
-      /* 24px - 28px */
-      width: clamp(1.5rem, 2vw, 1.75rem);
-      /* 14px - 16px */
-      height: clamp(0.875rem, 1.5vw, 1rem);
-      position: relative;
-    }
-    #cs-navigation .cs-line {
-      width: 100%;
-      height: 2px;
-      border-radius: 2px;
-      background-color: #fff;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    #cs-navigation .cs-line1 {
-      top: 0;
-      transform-origin: center;
-      transition:
-        transform 0.5s,
-        top 0.3s,
-        left 0.3s;
-      animation-duration: 0.7s;
-      animation-timing-function: ease;
-      animation-fill-mode: forwards;
-      animation-direction: normal;
-    }
-    #cs-navigation .cs-line2 {
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      transition:
-        top 0.3s,
-        left 0.3s,
-        transform 0.5s;
-      animation-duration: 0.7s;
-      animation-timing-function: ease;
-      animation-fill-mode: forwards;
-      animation-direction: normal;
-    }
-    #cs-navigation .cs-line3 {
-      bottom: 0;
-      transition:
-        bottom 0.3s,
-        opacity 0.3s;
-    }
-    #cs-navigation .cs-ul-wrapper {
-      width: 300%;
-      height: auto;
-      padding-bottom: 2.4em;
-      opacity: 0;
-      background-color: #fff;
-      box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
-      overflow: hidden;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: -1;
-      transform: scaleY(0);
-      transform-origin: top;
-      transition:
-        transform 0.4s,
-        opacity 0.3s;
-    }
-    #cs-navigation .cs-ul {
-      margin: 0;
-      padding: 3rem 0 0 0;
-      width: 100%;
-      height: auto;
-      max-height: 65vh;
-      overflow: scroll;
-      display: flex;
-      justify-content: flex-start;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-    }
-    #cs-navigation .cs-li {
-      width: 100%;
-      text-align: center;
-      list-style: none;
-      margin-right: 0;
-      /* transition from these values */
-      transform: translateY(-4.375rem);
-      opacity: 0;
-      transition:
-        transform 0.6s,
-        opacity 0.9s;
-    }
-    #cs-navigation .cs-li:nth-of-type(1) {
-      transition-delay: 0.05s;
-    }
-    #cs-navigation .cs-li:nth-of-type(2) {
-      transition-delay: 0.1s;
-    }
-    #cs-navigation .cs-li:nth-of-type(3) {
-      transition-delay: 0.15s;
-    }
-    #cs-navigation .cs-li:nth-of-type(4) {
-      transition-delay: 0.2s;
-    }
-    #cs-navigation .cs-li:nth-of-type(5) {
-      transition-delay: 0.25s;
-    }
-    #cs-navigation .cs-li:nth-of-type(6) {
-      transition-delay: 0.3s;
-    }
-    #cs-navigation .cs-li:nth-of-type(7) {
-      transition-delay: 0.35s;
-    }
-    #cs-navigation .cs-li:nth-of-type(8) {
-      transition-delay: 0.4s;
-    }
-    #cs-navigation .cs-li:nth-of-type(9) {
-      transition-delay: 0.45s;
-    }
-    #cs-navigation .cs-li:nth-of-type(10) {
-      transition-delay: 0.5s;
-    }
-    #cs-navigation .cs-li:nth-of-type(11) {
-      transition-delay: 0.55s;
-    }
-    #cs-navigation .cs-li:nth-of-type(12) {
-      transition-delay: 0.6s;
-    }
-    #cs-navigation .cs-li:nth-of-type(13) {
-      transition-delay: 0.65s;
-    }
-    #cs-navigation .cs-li-link {
-      /* 16px - 24px */
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      line-height: 1.2em;
-      text-decoration: none;
-      margin: 0;
-      color: #fff;
-      display: inline-block;
-      position: relative;
-    }
-    #cs-navigation .cs-li-link:before {
-      /* active state underline */
-      content: "";
-      width: 100%;
-      height: 1px;
-      background: currentColor;
-      opacity: 1;
-      position: absolute;
-      display: none;
-      bottom: -0.125rem;
-      left: 0;
-    }
-    #cs-navigation .cs-li-link.cs-active:before {
-      display: block;
-    }
-    #cs-navigation .cs-button-solid {
-      display: none;
-    }
+/* Mobile - 1023px */
+@media only screen and (max-width: 63.9375rem) {
+  body {
+    position: relative;
+    z-index: 1;
   }
 
-  /*-- -------------------------- -->
-<---     Desktop Navigation     -->
-<--- -------------------------- -*/
-
-@media only screen and (min-width: 64rem) {
+  body:before {
+    content: '';
+    width: 100%;
+    /* height: 0%; */
+    background: #fff;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    transition: height .3s;
+  }
   body.scroll #cs-navigation {
     width: 100%;
     max-width: 100%;
-    border-radius: 0;
     top: 0;
   }
+  body.scroll #cs-navigation:before {
+    border-radius: 0;
+  }
+  body.scroll #cs-navigation .cs-ul-wrapper {
+    top: 100%;
+  }
+  body.cs-open {
+    overflow: hidden;
+    /* background: url(https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FLandscapes%2Flandscape1.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 200vh;
+  }
+  body.cs-open:before {
+    height: 100%;
+  }
   #cs-navigation {
-    width: 160%;
-    /* max-width: 90rem;
-    height: 6rem; */
+    width: 94%;
+    max-width: 80rem;
+    /* 12px - 24px */
+    padding: clamp(0.75rem, 2vw, 1.5rem);
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     /* 12px - 24px */
-    padding: clamp(0.75rem, 2vw, 1.5rem) 0;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    /* 12px - 24px */
     border-radius: clamp(0.75rem, 2vw, 1.5rem);
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 2rem;
+    position: relative;
+    /* top: 2rem; */
     left: 50%;
     z-index: 10000;
     transform: translateX(-50%);
     transition: top 0.3s, border-radius 0.3s, width 0.3s, max-width 0.3s;
   }
+  #cs-navigation:before {
+    /* background color */
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /* 12px - 24px */
+    border-radius: clamp(0.75rem, 2vw, 1.5rem);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    opacity: 1;
+    position: relative;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.2s, border-radius 0.3s ease-in-out;
+  }
+  #cs-navigation.cs-active:before {
+    transform: translateX(-50%) scale(1.03);
+  }
+  #cs-navigation.cs-active .cs-ul-wrapper {
+    opacity: 1;
+    transform: scaleY(1);
+    /* background-color:aquamarine; */
+  }
+  #cs-navigation.cs-active .cs-toggle {
+    transform: rotate(180deg);
+  }
+  #cs-navigation.cs-active .cs-li {
+    transform: translateY(0);
+    opacity: 1;
+  }
   #cs-navigation .cs-container {
     width: 100%;
-    max-width: 90rem;
-    margin: auto;
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-    padding: 0 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     gap: 1.5rem;
   }
-  #cs-navigation .cs-toggle {
-    display: none;
-  }
   #cs-navigation .cs-logo {
-    display: contents;
-    width: 180%;
+    width: auto;
+    max-width: 12.5rem;
+    height: 100%;
+    margin: 0 auto 0 0;
+    padding: 0;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
   }
   #cs-navigation .cs-logo img {
-
-    /* background-color: aqua; */
-    width: 130px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
-      /* text-align: center;
-      justify-content: center; */
   }
-  #cs-navigation .cs-contact-group {
+  #cs-navigation .cs-toggle {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 0 0 auto;
+    border-radius: 0.25rem;
+    background-color: #1A1A1A;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    position: relative;
+    z-index: 1
+            ;
+    transition: transform .6s;
+  }
+  #cs-navigation .cs-nav {
+    /* sends it to the right in the 3rd position */
+    order: 3;
+  }
+  #cs-navigation .cs-contact-group {
+    display: none;
+    position: relative;
+    z-index: 1;
   }
   #cs-navigation .cs-phone {
     font-size: 1rem;
@@ -383,7 +206,8 @@
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
-    transition: opacity 0.3s, color 0.3s;
+    transition: opacity 0.3s,
+                color 0.3s;
   }
   #cs-navigation .cs-phone-icon {
     width: 1.5rem;
@@ -391,167 +215,400 @@
     display: block;
   }
   #cs-navigation .cs-social {
-    height: 2rem;
-    opacity: 1;
     display: none;
-    visibility: visible;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
   }
-  #cs-navigation .cs-social-link {
-    text-decoration: none;
-    width: 2rem;
-    height: 2rem;
-    background-color: #f7f7f7;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s;
+  #cs-navigation .cs-active .cs-line1 {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(225deg);
   }
-  #cs-navigation .cs-social-link:hover {
-    background-color: var(--primary);
+  #cs-navigation .cs-active .cs-line2 {
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
   }
-  #cs-navigation .cs-social-link:hover .cs-social-icon {
-    opacity: 1;
-    filter: grayscale(1) brightness(10000%);
+  #cs-navigation .cs-active .cs-line3 {
+    bottom: 100%;
+    opacity: 0;
   }
-  #cs-navigation .cs-social-icon {
-    width: 0.75rem;
-    height: auto;
-    opacity: 0.6;
-    display: block;
-    transition: opacity 0.3s;
+  #cs-navigation .cs-box {
+    /* 24px - 28px */
+    width: clamp(1.5rem, 2vw, 1.75rem);
+    height: 1rem;
+    position: relative;
+  }
+  #cs-navigation .cs-line {
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #FAFBFC;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #cs-navigation .cs-line1 {
+    top: 0;
+    transform-origin: center;
+    transition: transform .5s, top .3S, left .3S;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+  #cs-navigation .cs-line2 {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: top .3s, left .3s, transform .5s;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+  #cs-navigation .cs-line3 {
+    bottom: 0;
+    transition: bottom .3s, opacity .3s;
   }
   #cs-navigation .cs-ul-wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    /* absolutely positioned to be dead center */
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 2.4em;
+    opacity: 0;
+    background-color: #fff;
+    box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    overflow: hidden;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 0;
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s, opacity 0.3s;
   }
   #cs-navigation .cs-ul {
-    width: 100%;
-    height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 3rem 0 0 0;
+    width: 100%;
+    height: auto;
+    max-height: 65vh;
+    overflow: scroll;
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    /* 20px - 36px */
-    gap: clamp(1.25rem, 2.6vw, 2.25rem);
+    gap: 1.25rem;
   }
   #cs-navigation .cs-li {
     list-style: none;
-    height: 100%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    /* prevent flexbox from squishing it */
-    flex: none;
+    margin-right: 0;
+    /* transition from these values */
+    transform: translateY(-4.375rem);
+    opacity: 0;
+    transition: transform .6s, opacity .9s;
+  }
+  #cs-navigation .cs-li:nth-of-type(1) {
+    transition-delay: .05s;
+  }
+  #cs-navigation .cs-li:nth-of-type(2) {
+    transition-delay: .1s;
+  }
+  #cs-navigation .cs-li:nth-of-type(3) {
+    transition-delay: .15s;
+  }
+  #cs-navigation .cs-li:nth-of-type(4) {
+    transition-delay: .2s;
+  }
+  #cs-navigation .cs-li:nth-of-type(5) {
+    transition-delay: .25s;
+  }
+  #cs-navigation .cs-li:nth-of-type(6) {
+    transition-delay: .3s;
+  }
+  #cs-navigation .cs-li:nth-of-type(7) {
+    transition-delay: .35s;
+  }
+  #cs-navigation .cs-li:nth-of-type(8) {
+    transition-delay: .4s;
+  }
+  #cs-navigation .cs-li:nth-of-type(9) {
+    transition-delay: .45s;
   }
   #cs-navigation .cs-li-link {
-    font-size: 1rem;
-    line-height: 1.5em;
+    font-size: 1.5rem;
+    line-height: 1.2em;
     text-decoration: none;
     margin: 0;
     color: var(--headerColor);
-    display: block;
-    position: relative;
-    transition: color 0.3s;
-  }
-  #cs-navigation .cs-li-link:hover {
-    color: var(--primary);
-  }
-  #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
-  }
-  #cs-navigation .cs-button-solid {
-    font-size: 1rem;
-    font-weight: 700;
-    /* 46px - 56px */
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
-    text-align: center;
-    text-decoration: none;
-    min-width: 9.375rem;
-    margin: 0;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    padding: 0 2rem;
-    color: #fff;
-    background-color: var(--primary);
     display: inline-block;
     position: relative;
-    z-index: 1;
-    transition: color 0.3s;
   }
-  #cs-navigation .cs-button-solid:before {
-    content: "";
-    width: 0%;
-    height: 100%;
-    background: #fff;
+  #cs-navigation .cs-li-link:before {
+    /* active state underline */
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: currentColor;
     opacity: 1;
     position: absolute;
-    top: 0;
+    display: none;
+    bottom: -0.125rem;
     left: 0;
-    z-index: -1;
-    transition: width 0.3s;
   }
-  #cs-navigation .cs-button-solid:hover {
-    color: #1a1a1a;
+  #cs-navigation .cs-li-link.cs-active:before {
+    display: block;
   }
-  #cs-navigation .cs-button-solid:hover:before {
-    width: 100%;
+  #cs-navigation .cs-button-solid {
+    display: none;
   }
 }
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #cs-navigation .cs-social {
-    display: flex;
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cs-navigation .cs-contact-group {
+    display: block;
   }
 }
+/* Small Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+      #cs-navigation {
+          width: 100%;
+          /* padding: 0 1rem; */
+          /* prevents padding and border from affecting height and width */
+          box-sizing: border-box;
+          background-color: #fff;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          position: fixed;
+          z-index: 10000;
+      }
+      #cs-navigation .cs-container {
+          width: 100%;
+          max-width: 80rem;
+          margin: auto;
+          display: block;
+          /* justify-content: flex-end; */
+          align-items: center;
+          gap: 1.5rem;
+          text-align: center;
+      }
+      #cs-navigation .cs-toggle {
+          display: none;
+      }
+      #cs-navigation .cs-logo {
+          width: 100%;
+          /* max-width: 21.875rem; */
+          height: 130px;
+          /* margin-right auto pushes everything away from it to the right */
+          /* margin: 0 auto 0 0;
+          padding: 0; */
+          display: block;
+          /* justify-content: center;
+          align-items: center;
+          z-index: 100; */
+      }
+      #cs-navigation .cs-logo img {
+          width: 100%;
+          height: 150px;
+          /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+          object-fit: contain;
+          padding: 0 0 0.5rem 0;
+
+      }
+      #cs-navigation .cs-ul {
+          /* width: 100%; */
+          margin: auto;
+          /* padding: 0; */
+          display: inline-flex;
+          /* justify-content: flex-start; */
+          /* align-items: center; */
+          /* 20px - 36px */
+          gap: clamp(1.25rem, 2.6vw, 2.25rem);
+          text-align: center;
+      }
+      #cs-navigation .cs-li {
+          list-style: none;
+          padding: 2rem 0;
+          /* prevent flexbox from squishing it */
+          flex: none;
+      }
+      #cs-navigation .cs-li-link {
+          /* 14px - 16px */
+          font-size: clamp(0.875rem, 1vw, 1rem);
+          line-height: 1.5em;
+          text-decoration: none;
+          margin: 0;
+          color: var(--bodyTextColor);
+          display: block;
+          position: relative;
+      }
+      #cs-navigation .cs-li-link:hover:before {
+          width: 100%;
+      }
+      #cs-navigation .cs-li-link.cs-active:before {
+          width: 100%;
+      }
+      #cs-navigation .cs-li-link:before {
+          /* active state underline */
+          content: "";
+          width: 0%;
+          height: 2px;
+          background: var(--primary);
+          opacity: 1;
+          position: absolute;
+          display: block;
+          bottom: 0rem;
+          left: 0;
+          transition: width 0.3s;
+      }
+      #cs-navigation .cs-button-solid {
+          font-size: 1rem;
+          /* 46px - 56px */
+          line-height: clamp(2.875em, 5.5vw, 3.5em);
+          text-decoration: none;
+          font-weight: 700;
+          text-align: center;
+          margin: 0;
+          color: #fff;
+          min-width: 9.375rem;
+          padding: 0 1.5rem;
+          background-color: var(--primary);
+          border-radius: 0.25rem;
+          display: inline-block;
+          position: relative;
+          z-index: 1;
+          /* prevents padding from adding to the width */
+          box-sizing: border-box;
+      }
+      #cs-navigation .cs-button-solid:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 0%;
+          background: #000;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 0.25rem;
+          transition: width 0.3s;
+      }
+      #cs-navigation .cs-button-solid:hover:before {
+          width: 100%;
+      }
+
+      #cs-navigation .cs-nav{
+        background-color: burlywood;
+        margin-top: 20px;
+      }
+
+  }
+                                  </style>
+
+<style>:root {
+  /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+  --primary: #ff6a3e;
+  --primaryLight: #ffba43;
+  --secondary: #ffba43;
+  --secondaryLight: #ffba43;
+  --headerColor: #1a1a1a;
+  --bodyTextColor: #4e4b66;
+  --bodyTextColorWhite: #fafbfc;
+  /* 13px - 16px */
+  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  /* 31px - 49px */
+  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+  --bodyFontSize: 1rem;
+  /* 60px - 100px top and bottom */
+  --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  /* prevents padding from affecting height and width */
+  box-sizing: border-box;
+}
+.cs-topper {
+  font-size: var(--topperFontSize);
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: inherit;
+  letter-spacing: .1em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.cs-title {
+  font-size: var(--headerFontSize);
+  font-weight: 900;
+  line-height: 1.2em;
+  text-align: inherit;
+  max-width: 43.75rem;
+  margin: 0 0 1rem 0;
+  color: var(--headerColor);
+  position: relative;
+}
+
+.cs-text {
+  font-size: var(--bodyFontSize);
+  line-height: 1.5em;
+  text-align: inherit;
+  width: 100%;
+  max-width: 40.625rem;
+  margin: 0;
+  color: var(--bodyTextColor);
+}
+                          </style>
+
 <script>// add classes for mobile navigation toggling
     var CSbody = document.querySelector("body");
     const CSnavbarMenu = document.querySelector("#cs-navigation");
     const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 
+    if (CShamburgerMenu && CSnavbarMenu && CSbody) {
     CShamburgerMenu.addEventListener('click', function() {
         CShamburgerMenu.classList.toggle("cs-active");
         CSnavbarMenu.classList.toggle("cs-active");
-        CSbody.classList.toggle("cs-open");
-        // run the function to check the aria-expanded value
+        CSbody?.classList.toggle("cs-open");
+        // Ejecutar la función para verificar el valor de aria-expanded
         ariaExpanded();
     });
+}
 
-    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not 
-    function ariaExpanded() {
-        const csUL = document.querySelector('#cs-expanded');
+function ariaExpanded() {
+    const csUL = document.querySelector('#cs-expanded');
+    if (csUL) {
         const csExpanded = csUL.getAttribute('aria-expanded');
-
-        if (csExpanded === 'false') {
-            csUL.setAttribute('aria-expanded', 'true');
-        } else {
-            csUL.setAttribute('aria-expanded', 'false');
+        if (csExpanded) {
+            if (csExpanded === 'false') {
+                csUL.setAttribute('aria-expanded', 'true');
+            } else {
+                csUL.setAttribute('aria-expanded', 'false');
+            }
         }
     }
+}
+
 
         // This script adds a class to the body after scrolling 100px
     // and we used these body.scroll styles to create some on scroll 
     // animations with the navbar
     
-    document.addEventListener('scroll', (e) => { 
-        const scroll = document.documentElement.scrollTop;
-        if(scroll >= 100){
-    document.querySelector('body').classList.add('scroll')
+    document.addEventListener('scroll', () => { 
+    const scroll = document.documentElement.scrollTop;
+    const body = document.querySelector('body');
+    
+    if (body !== null) { // Verificar si body no es null
+        if (scroll >= 100) {
+            body.classList.add('scroll');
         } else {
-        document.querySelector('body').classList.remove('scroll')
+            body.classList.remove('scroll');
         }
-    });
+    }
+});
+
 
 
     // mobile nav toggle code
@@ -563,9 +620,3 @@
         item.addEventListener('click', onClick)
         }
                                 </script>
-  
-</style>
-
-
-
-
