@@ -1,11 +1,13 @@
-<!-- ============================================ --><!--                    Hero                      --><!-- ============================================ -->
-<section id="hero-227">
+<!-- /* HERO 2 */ -->
+
+<section id="hero-150">
   <div class="cs-container">
     <div class="cs-flex-group">
-      <span class="cs-topper">Centro de Día</span>
-      <h1 class="cs-title">¡Bievenidos a nuestra Institución!</h1>
+      <span class="cs-topper">Centro de Rehabilitacion INSERIR Niños
+      </span>
+      <h1 class="cs-title">¡Te damos la bienvenida!</h1>
       <p class="cs-text">
-        ¡Descubre el Centro de Día INSERIR!
+      ¡Descubre el Centro de Rehabilitacion para Niños de INSERIR!
       </p>
       <a href="" class="cs-button-solid">Explorar más</a>
       <a href="" class="cs-button-transparent">
@@ -27,7 +29,8 @@
         <a class="cs-link" href="">
           <h2 class="cs-h2">Nuestra ubicación</h2>
           <p class="cs-item-text">
-            Adoratrices 898 B° San Antonio
+            Carnerillo 2173 B° Empalme
+
 
           </p>
         </a>
@@ -36,7 +39,7 @@
         <a class="cs-link" href="">
           <h2 class="cs-h2">Horario</h2>
           <p class="cs-item-text">
-            Horario: 08 a 15hs
+            Horario: 08 a 20hs
           </p>
         </a>
       </li>
@@ -45,34 +48,34 @@
           <h2 class="cs-h2">Nuestro numero de contacto
           </h2>
           <p class="cs-item-text">
-            Cel: 3516789473
+            Cel:3513575117
+
           </p>
         </a>
       </li>
     </ul>
   </div>
 
-  <!-- <div id="imgbajo">
-  <img src="q.jpg" alt="Descripción de la imagen" class="image-below">
-  </div> -->
-
-
   <!-- Background Image -->
   <picture class="cs-picture">
     <source
       media="(max-width: 600px)"
-      srcset="/n.jpg"
+      srcset="/k.jpg"
     />
     <source
       media="(min-width: 601px)"
-      srcset="/n.jpg"
+      srcset="/k.jpg"
     />
     <img
       decoding="async"
-      src="/n.jpg"
+      src="/k.jpg"
 
     />
   </picture>
+
+
+
+
 </section>
 
 <style>
@@ -82,7 +85,7 @@
 
   /* Mobile - 360px */
   @media only screen and (min-width: 0rem) {
-    #hero-227 {
+    #hero-150 {
       /* Centers button */
       text-align: center;
       /* changes on tablet */
@@ -92,7 +95,7 @@
       /* prevents overflow from the lines extending past the screen width */
       overflow: hidden;
     }
-    #hero-227 .cs-picture {
+    #hero-150 .cs-picture {
       /* Background Image */
       width: 100%;
       height: 100%;
@@ -102,7 +105,7 @@
       left: 0;
       z-index: -2;
     }
-    #hero-227 .cs-picture:before {
+    #hero-150 .cs-picture:before {
       /* Black Color Overlay */
       content: "";
       width: 100%;
@@ -117,7 +120,7 @@
       /* prevents the cursor from interacting with it */
       pointer-events: none;
     }
-    #hero-227 .cs-picture img {
+    #hero-150 .cs-picture img {
       position: absolute;
       top: 0;
       left: 0;
@@ -126,7 +129,7 @@
       /* Makes image act like a background-image */
       object-fit: cover;
     }
-    #hero-227 .cs-container {
+    #hero-150 .cs-container {
       width: 100%;
       max-width: 80rem;
       /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
@@ -138,7 +141,7 @@
       margin: auto;
       position: relative;
     }
-    #hero-227 .cs-container:before {
+    #hero-150 .cs-container:before {
       /* Left Line */
       content: "";
       width: 1px;
@@ -161,7 +164,7 @@
       top: 0;
       left: 0;
     }
-    #hero-227 .cs-flex-group {
+    #hero-150 .cs-flex-group {
       /* 60px - 220px */
       margin-bottom: clamp(3.75rem, 15.5vw, 13.75rem);
       /* changes on tablet */
@@ -175,7 +178,7 @@
       flex-wrap: wrap;
       box-sizing: border-box;
     }
-    #hero-227 .cs-topper {
+    #hero-150 .cs-topper {
       /* 13px - 16px */
       font-size: clamp(0.8125rem, 1.6vw, 1rem);
       line-height: 1.2em;
@@ -187,7 +190,7 @@
       margin-bottom: 1rem;
       display: block;
     }
-    #hero-227 .cs-title {
+    #hero-150 .cs-title {
       /* 39px - 61px */
       font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
       font-weight: 900;
@@ -199,7 +202,7 @@
       color: var(--bodyTextColorWhite);
       position: relative;
     }
-    #hero-227 .cs-text {
+    #hero-150 .cs-text {
       /* 16px - 20px */
       font-size: clamp(1rem, 1.95vw, 1.25rem);
       line-height: 1.5em;
@@ -211,7 +214,7 @@
       margin-bottom: clamp(2.5rem, 4vw, 3rem);
       color: var(--bodyTextColorWhite);
     }
-    #hero-227 .cs-button-solid {
+    #hero-150 .cs-button-solid {
       font-size: 1rem;
       /* 46px - 56px */
       line-height: clamp(2.875rem, 5.5vw, 3.5rem);
@@ -226,7 +229,7 @@
       position: relative;
       z-index: 1;
     }
-    #hero-227 .cs-button-solid:before {
+    #hero-150 .cs-button-solid:before {
       content: "";
       position: absolute;
       display: block;
@@ -239,10 +242,10 @@
       z-index: -1;
       transition: width 0.3s;
     }
-    #hero-227 .cs-button-solid:hover:before {
+    #hero-150 .cs-button-solid:hover:before {
       width: 100%;
     }
-    #hero-227 .cs-button-transparent {
+    #hero-150 .cs-button-transparent {
       font-size: 1rem;
       /* 46px - 56px */
       line-height: clamp(2.875rem, 5.5vw, 3.5rem);
@@ -263,7 +266,7 @@
       position: relative;
       z-index: 1;
     }
-    #hero-227 .cs-button-transparent:before {
+    #hero-150 .cs-button-transparent:before {
       content: "";
       position: absolute;
       display: block;
@@ -280,14 +283,14 @@
       transform: scaleX(0);
       transition: transform 0.3s;
     }
-    #hero-227 .cs-button-transparent:hover:before {
+    #hero-150 .cs-button-transparent:hover:before {
       transform: scaleX(1);
     }
-    #hero-227 .cs-button-transparent .cs-img {
+    #hero-150 .cs-button-transparent .cs-img {
       display: block;
       margin-right: 0.75rem;
     }
-    #hero-227 .cs-card-group {
+    #hero-150 .cs-card-group {
       padding: 0;
       margin: 0;
       display: flex;
@@ -295,12 +298,12 @@
       align-items: flex-start;
       justify-content: center;
     }
-    #hero-227 .cs-item {
+    #hero-150 .cs-item {
       list-style: none;
       position: relative;
       box-sizing: border-box;
     }
-    #hero-227 .cs-item:before {
+    #hero-150 .cs-item:before {
       /* Top Line */
       content: "";
       width: 100vw;
@@ -324,7 +327,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    #hero-227 .cs-item:last-of-type:after {
+    #hero-150 .cs-item:last-of-type:after {
       /* Bottom line on last card */
       content: "";
       width: 100vw;
@@ -348,7 +351,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    #hero-227 .cs-link {
+    #hero-150 .cs-link {
       text-align: left;
       text-decoration: none;
       /* changes on tablet */
@@ -359,10 +362,10 @@
       justify-content: center;
       position: relative;
     }
-    #hero-227 .cs-link:hover:before {
+    #hero-150 .cs-link:hover:before {
       opacity: 0.4;
     }
-    #hero-227 .cs-link:before {
+    #hero-150 .cs-link:before {
       /* Hover Box */
       content: "";
       width: 100%;
@@ -376,7 +379,7 @@
       z-index: -1;
       transition: opacity 0.3s;
     }
-    #hero-227 .cs-number {
+    #hero-150 .cs-number {
       /* 20px - 25px */
       font-size: clamp(1.25rem, 2vw, 1.5625rem);
       line-height: 1.2em;
@@ -386,7 +389,7 @@
       color: var(--primaryLight);
       display: block;
     }
-    #hero-227 .cs-h2 {
+    #hero-150 .cs-h2 {
       /* 16px - 20px */
       font-size: clamp(1rem, 2vw, 1.25rem);
       font-weight: 900;
@@ -398,7 +401,7 @@
       position: relative;
       z-index: 10000;
     }
-    #hero-227 .cs-item-text {
+    #hero-150 .cs-item-text {
       /* 14px - 16px */
       font-size: clamp(0.875rem, 3vw, 1rem);
       margin: 0;
@@ -409,14 +412,14 @@
   }
   /* Tablet - 768px */
   @media only screen and (min-width: 48rem) {
-    #hero-227 {
+    #hero-150 {
       /* 32px - 40px */
       padding: 0 clamp(2rem, 5vw, 2.5rem);
     }
-    #hero-227 .cs-container {
+    #hero-150 .cs-container {
       padding-bottom: 4rem;
     }
-    #hero-227 .cs-container:after {
+    #hero-150 .cs-container:after {
       /* Right Line */
       content: "";
       width: 1px;
@@ -439,18 +442,18 @@
       top: 0;
       right: 0;
     }
-    #hero-227 .cs-flex-group {
+    #hero-150 .cs-flex-group {
       /* 44px - 88px */
       margin-left: clamp(2.75rem, 5.9vw, 5.5rem);
     }
-    #hero-227 .cs-button-solid {
+    #hero-150 .cs-button-solid {
       margin-bottom: 0;
     }
-    #hero-227 .cs-card-group {
+    #hero-150 .cs-card-group {
       flex-direction: row;
       position: relative;
     }
-    #hero-227 .cs-card-group:before {
+    #hero-150 .cs-card-group:before {
       /* Top Line */
       content: "";
       /* make it extend past the left and right of the screen */
@@ -476,7 +479,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    #hero-227 .cs-item:before {
+    #hero-150 .cs-item:before {
       width: 1px;
       height: 100vh;
       background: -moz-linear-gradient(
@@ -496,27 +499,25 @@
       right: 0;
       bottom: -4rem;
     }
-    #hero-227 .cs-item:nth-of-type(1) {
+    #hero-150 .cs-item:nth-of-type(1) {
       /* makes the first line under the buttons shorter */
     }
-    #hero-227 .cs-item:nth-of-type(1):before {
+    #hero-150 .cs-item:nth-of-type(1):before {
       height: 39.375rem;
     }
-    #hero-227 .cs-item:last-of-type:before,
-    #hero-227 .cs-item:last-of-type:after {
+    #hero-150 .cs-item:last-of-type:before,
+    #hero-150 .cs-item:last-of-type:after {
       display: none;
     }
-    #hero-227 .cs-link {
+    #hero-150 .cs-link {
       /* 44px - 64px top & bottom, 48px - 88px left & right */
       padding: clamp(2.75rem, 5.9vw, 5.5rem) clamp(3rem, 5.9vw, 5.5rem);
     }
   }
-
-
   /* Desktop Parallax Effect - 1300px */
-  @media only screen and (min-width: 81.25rem) { */
-    #hero-227 {
-      background: url("n.jpg");
+  @media only screen and (min-width: 81.25rem) {
+    #hero-150 {
+      background: url("k.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -524,7 +525,7 @@
       background-attachment: fixed;
       /* remove img tag so we can make parallax work */
     }
-    #hero-227 .cs-picture {
+    #hero-150 .cs-picture img {
       position: absolute;
         top: 0;
         left: 0;
@@ -533,25 +534,5 @@
         object-fit: cover;
     }
   }
-    /* #hero-227 {
-      background: url("q.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      /* creates parallax effect on background image */
-      /* background-attachment: fixed; */
-      /* remove img tag so we can make parallax work */
-    
-    /* #hero-227 .image-below {
-      width: 100%; /* Ancho máximo de la imagen */
-            /* height: auto; /* Altura automática para mantener la proporción */
-            /* display: block; Mostrar como bloque para centrar si es necesario */
-            /* margin-top: 20px; Espaciado superior para separar del banner */
-    /* } */ */ */
-
-
-
-  /* } */ */
-
-
+  
 </style>
