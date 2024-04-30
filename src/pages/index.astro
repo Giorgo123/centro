@@ -22,7 +22,7 @@ import Team from "../components/Team.astro";
   <body>
     <Navbar/>
     <Hero/>
-    <img src="public/q.jpg" alt="img2centro" class="img-centro">
+    <img src="/q.jpg" alt="img2centro" class="img-centro">
     <Hero2/>
     <Hero3></Hero3>
     <!-- <SideBySide /> -->
@@ -111,24 +111,14 @@ import Team from "../components/Team.astro";
   }
 
 
-    /* Estilos para el contenedor de fade-in */
-.fade-in {
-    opacity: 0; /* Inicialmente, ocultar el contenido */
-    transition: opacity 1s ease; /* Agregar una transición de opacidad */
-}
-
-/* Estilos para el contenido que aparece gradualmente */
-.fade-in.show {
-    opacity: 1; /* Mostrar el contenido con opacidad completa */
-}
-.img-centro{
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
+  .img-centro{
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
 </style>
 
 <script>document.addEventListener("DOMContentLoaded", function() {
