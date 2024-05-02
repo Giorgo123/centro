@@ -1,46 +1,45 @@
 ---
-import CTA from "../components/CTA.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import Hero from "../components/Hero.astro";
-import Hero2 from "../components/Hero2.astro"
-import Hero3 from "../components/Hero3.astro";
-import Pricing from "../components/Pricing.astro";
-import Reviews from "../components/Reviews.astro";
-import SideBySide from "../components/SideBySide.astro";
+// import Reviews from "../components/Reviews.astro";
+// import SideBySide from "../components/SideBySide.astro";
 import Team from "../components/Team.astro";
-import Nosotros from "./Nosotros.astro";
-import Actividades from "./Actividades.astro";
-
-
-
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>INSERIR</title>
-  </head>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Nosotros</title>
+    </head>
   <body>
     <Navbar/>
-    <Hero/>
-    <img src="/q.jpg" alt="img2centro" class="img-centro">
-    <Hero2/>
-    <Hero3/>
-    <!-- <SideBySide /> -->
-    <!-- <Team /> -->
-    <!-- <Pricing /> -->
-    <Reviews />
-    <!-- <CTA /> -->
-    <Footer />
+
+    <div class="text">  
+    <p>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</p>
+
+    <img src="l.jpg" alt="imgteam" class="foto-team">
+
+    <Team/>
+    <Footer/>
+    
+    
   </body>
 </html>
 
+
+
+
+
 <style>
-  :root {
+    .foto-team{
+        width: 100%;
+    }
+
+
+
+ :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     --primary: #ff6a3e;
     --primaryLight: #ffba43;
@@ -124,13 +123,4 @@ import Actividades from "./Actividades.astro";
   }
 
 
-
 </style>
-
-<script>document.addEventListener("DOMContentLoaded", function() {
-  const fadeInElements = document.querySelectorAll('.fade-in');
-  fadeInElements.forEach(element => {
-      element.classList.add('show'); // Agregar la clase 'show' para activar la transición de fade-in
-  });
-});
-</script>
