@@ -15,11 +15,12 @@ import Team from "../components/Team.astro";
     </head>
   <body>
     <Navbar/>
-<div>
+<div class="caja-text">
     <div class="text-nos">    
         <h1>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</h1>
     </div>
-</div>
+</div >
+<div>
     <div class="foto-team">
         <img src="/l.jpg" alt="imgteam">
     </div>  
@@ -38,23 +39,21 @@ import Team from "../components/Team.astro";
 
 <style>
     .foto-team{
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        object-fit: cover;
+        max-width: 100%; /* La imagen no excederá el ancho del contenedor */
+  text-align: center; /* Centra la imagen horizontalmente */
+  margin-top: 20px; /* Agrega un margen superior para separar el texto de la imagen */
+    }
+
+    .caja-text{
+        display: flex;
+        flex-direction: column; /* Cambia la dirección de flexión a vertical */
+        align-items: center; /* Centra el contenido horizontalmente */
+        padding: 50px 0;
     }
 
     .text-nos{
-        font-size: clamp(2.4375rem,6.4vw,3.8125rem);
-        font-weight: 700;
-        line-height: 1.2em;
-        text-align: left;
-        width: 100%;
-        margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
-        color: black;
-        position: relative;
+        max-width: 600px; /* Define el ancho máximo del div de texto */
+  text-align: center; /* Centra el texto dentro del div */margin: 0 auto;
     }
  :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
