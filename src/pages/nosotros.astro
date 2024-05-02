@@ -15,16 +15,20 @@ import Team from "../components/Team.astro";
     </head>
   <body>
     <Navbar/>
-
-    <div class="text">  
-    <p>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</p>
-
-    <img src="l.jpg" alt="imgteam" class="foto-team">
+<div>
+    <div class="text-nos">    
+        <h1>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</h1>
+    </div>
+</div>
+    <div class="foto-team">
+        <img src="/l.jpg" alt="imgteam">
+    </div>  
+</div>
 
     <Team/>
     <Footer/>
     
-    
+
   </body>
 </html>
 
@@ -35,10 +39,23 @@ import Team from "../components/Team.astro";
 <style>
     .foto-team{
         width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
     }
 
-
-
+    .text-nos{
+        font-size: clamp(2.4375rem,6.4vw,3.8125rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        text-align: left;
+        width: 100%;
+        margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
+        color: black;
+        position: relative;
+    }
  :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     --primary: #ff6a3e;
