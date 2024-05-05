@@ -9,23 +9,24 @@ import Team from "../components/Team.astro";
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
         <meta name="generator" content={Astro.generator} />
         <title>Nosotros</title>
     </head>
   <body>
     <Navbar/>
-<div class="caja-text">
-    <div class="text-nos">    
-        <h1>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</h1>
+    <div>
+      <div class="foto-team">
+          <img src="/l.jpg" alt="imgteam">
+      </div>  
     </div>
-</div >
-<div>
-    <div class="foto-team">
-        <img src="/l.jpg" alt="imgteam">
-    </div>  
-</div>
+    <div class="caja-text">
+      <div class="text-nos">    
+          <h1>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</h1>
+      </div>
+    </div >
 
+  
     <Team/>
     <Footer/>
     
@@ -38,10 +39,53 @@ import Team from "../components/Team.astro";
 
 
 <style>
-    .foto-team{
+/* TODO ESTO PARA VERSION MOBILE O CELULAR */
+@media only screen and (max-width: 768px) {
+    .foto-team img {
         max-width: 100%; /* La imagen no excederá el ancho del contenedor */
-  text-align: center; /* Centra la imagen horizontalmente */
-  margin-top: 20px; /* Agrega un margen superior para separar el texto de la imagen */
+        margin-top: 10px; /* Reduzco el margen superior para dispositivos móviles */
+    }
+    .caja-text {
+        padding: 30px 0; /* Reduzco el padding superior e inferior para dispositivos móviles */
+    }
+
+    .text-nos {
+      font-family: "Arial", sans-serif;
+        font-size: 18px;
+        color: black;
+        text-align: center;
+        max-width: 100%;
+        margin: 0 auto;
+        background-color: #f391c2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cs-topper {
+        font-size: 1.2em; /* Reduzco el tamaño de la fuente del encabezado */
+    }
+
+    .cs-title {
+        font-size: 1.5em; /* Reduzco el tamaño de la fuente del título */
+    }
+
+    .cs-text {
+        font-size: 0.9em; /* Reduzco el tamaño de la fuente del texto */
+    }
+}
+
+
+/* TODO ESTO PARA COMPUTADORA */
+
+@media only screen and (min-width: 768px){
+  .foto-team img {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     }
 
     .caja-text{
@@ -52,8 +96,16 @@ import Team from "../components/Team.astro";
     }
 
     .text-nos{
-        max-width: 600px; /* Define el ancho máximo del div de texto */
-  text-align: center; /* Centra el texto dentro del div */margin: 0 auto;
+      font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente a una que prefieras */
+            font-size: 18px; /* Tamaño medio para el texto */
+            color: black; /* Color de texto gris */
+            text-align: center; /* Centrar el texto horizontalmente */
+            max-width: 100%; /* Ancho máximo para el texto */
+            margin: 0 auto; /* Centrar el texto horizontalmente */
+            background-color: #f391c2; /* Color de fondo gris claro */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     }
  :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
@@ -129,14 +181,7 @@ import Team from "../components/Team.astro";
     color: var(--bodyTextColor);
   }
 
-  .img-centro{
-      position: relative;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-  }
-
+  
+}
 
 </style>
