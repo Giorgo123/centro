@@ -15,14 +15,22 @@ import Team from "../components/Team.astro";
     </head>
   <body>
     <Navbar/>
+
+    <div class="cs-title">
+      <div class="title">
+        <h1>Acerca de Nosotros</h1>
+      </div>
+    </div>
+
     <div>
       <div class="foto-team">
           <img src="/l.jpg" alt="imgteam">
       </div>  
     </div>
+
     <div class="caja-text">
       <div class="text-nos">    
-          <h1>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</h1>
+          <span>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</span>
       </div>
     </div >
 
@@ -45,6 +53,27 @@ import Team from "../components/Team.astro";
         max-width: 100%; /* La imagen no excederá el ancho del contenedor */
         margin-top: 10px; /* Reduzco el margen superior para dispositivos móviles */
     }
+    .cs-title{
+      background-color: #f391c2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        line-height: 2.5rem;
+    }
+    .title {
+      font-family: "Arial", sans-serif;
+        font-size: 18px;
+        color: black;
+        text-align: center;
+        /* max-width: 100%;
+        margin: 0 auto;
+        background-color: #f391c2;
+        padding: 20px;
+        border-radius: 10px; */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+    }
+
     .caja-text {
         padding: 30px 0; /* Reduzco el padding superior e inferior para dispositivos móviles */
     }
@@ -60,32 +89,58 @@ import Team from "../components/Team.astro";
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        line-height: 2.5rem;
     }
 
     .cs-topper {
         font-size: 1.2em; /* Reduzco el tamaño de la fuente del encabezado */
     }
 
-    .cs-title {
+    /* .cs-title {
         font-size: 1.5em; /* Reduzco el tamaño de la fuente del título */
-    }
+    } */
 
     .cs-text {
         font-size: 0.9em; /* Reduzco el tamaño de la fuente del texto */
     }
-}
+
 
 
 /* TODO ESTO PARA COMPUTADORA */
 
 @media only screen and (min-width: 768px){
-  .foto-team img {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    .foto-team img {
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      }
+
+
+    .cs-title{
+      font-family: "Arial", sans-serif;
+        font-size: 24px;
+        color: black;
+        text-align: center;
+        height: 100%;
+      width: 100%;
+        background-color: #f391c2;
+        line-height: 2.5rem;
+    }
+    .title .h1{
+      font-family: "Arial", sans-serif;
+        font-size: 18px;
+        color: black;
+        text-align: center;
+        width: 100%;
+        /* max-width: 100%;
+        margin: 0 auto;
+        background-color: #f391c2;
+        padding: 20px;
+        border-radius: 10px; */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .caja-text{
@@ -97,7 +152,7 @@ import Team from "../components/Team.astro";
 
     .text-nos{
       font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente a una que prefieras */
-            font-size: 18px; /* Tamaño medio para el texto */
+            font-size: 24px; /* Tamaño medio para el texto */
             color: black; /* Color de texto gris */
             text-align: center; /* Centrar el texto horizontalmente */
             max-width: 100%; /* Ancho máximo para el texto */
@@ -106,6 +161,7 @@ import Team from "../components/Team.astro";
             padding: 20px; /* Espaciado interno */
             border-radius: 10px; /* Bordes redondeados */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            line-height: 2.5rem;
     }
  :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
@@ -160,26 +216,7 @@ import Team from "../components/Team.astro";
     display: block;
   }
 
-  .cs-title {
-    font-size: var(--headerFontSize);
-    font-weight: 900;
-    line-height: 1.2em;
-    text-align: inherit;
-    max-width: 43.75rem;
-    margin: 0 0 1rem 0;
-    color: var(--headerColor);
-    position: relative;
-  }
 
-  .cs-text {
-    font-size: var(--bodyFontSize);
-    line-height: 1.5em;
-    text-align: inherit;
-    width: 100%;
-    max-width: 40.625rem;
-    margin: 0;
-    color: var(--bodyTextColor);
-  }
 
   
 }
