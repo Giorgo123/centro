@@ -58,6 +58,10 @@ import Team from "../components/Team.astro";
       </div>
     </div >
 
+    <div class="img-pauta">
+      <img src="b.jpg" alt="pautas">
+  </div>
+
   
     <Team/>
     <Footer/>
@@ -73,6 +77,10 @@ import Team from "../components/Team.astro";
 <style>
 /* TODO ESTO PARA VERSION MOBILE O CELULAR */
 @media only screen and (max-width: 768px) {
+
+    .img-pauta img{
+      width: 100%;
+    }
     
     .text-nos li{
       list-style-type: none; /* Quita los puntos de la lista */
@@ -127,19 +135,21 @@ import Team from "../components/Team.astro";
         font-size: 1.2em; /* Reduzco el tamaño de la fuente del encabezado */
     }
 
-    /* .cs-title {
-        font-size: 1.5em; /* Reduzco el tamaño de la fuente del título */
-    } */
 
     .cs-text {
         font-size: 0.9em; /* Reduzco el tamaño de la fuente del texto */
     }
-
+  }
 
 
 /* TODO ESTO PARA COMPUTADORA */
 
 @media only screen and (min-width: 768px){
+
+    .img-pauta{
+      text-align: center;
+    }
+
     .foto-team img {
       position: relative;
       top: 0;
