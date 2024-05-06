@@ -5,8 +5,9 @@ import Footer from "../components/Footer.astro";
 // import SideBySide from "../components/SideBySide.astro";
 import Team from "../components/Team.astro";
 ---
-<html>
+<html lang="es">
     <head>
+
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
         <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
@@ -30,7 +31,30 @@ import Team from "../components/Team.astro";
 
     <div class="caja-text">
       <div class="text-nos">    
-          <span>Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. La Dra Rojo Graciela y la Dra Castello Rojo Fernanda</span>
+          <span>
+            En los Centros de Rehabilitación brindamos tratamiento integral. 
+            <br>
+            Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. 
+            
+            <li>Dra Rojo Graciela</li>  
+            <li>Dra Castello Rojo Fernanda</li> 
+            
+            <br>
+            <h2>Servicios Ofrecidos:</h2>
+
+            
+              <li>Realizamos tratamientos de neuro rehabilitación con evaluaciones fisiatricas y neuro cognitivas.</li>
+              <li>Terapias de Kinesiología y Fisioterapia</li>
+              <li>Fonoaudiología</li>
+              <li>Terapia Ocupacional</li>
+              <li>Psicomotricidad</li>
+              <li>Neuropsicología</li>
+              <li>Psicopedagogía</li>
+              <li>Trabajo Social</li>
+            
+            
+            <p>En el centro de Niños contamos con el área de Inclusión Escolar con docentes de apoyo a la inclusión escolar/ maestras integradoras.</p>
+          </span>
       </div>
     </div >
 
@@ -49,6 +73,13 @@ import Team from "../components/Team.astro";
 <style>
 /* TODO ESTO PARA VERSION MOBILE O CELULAR */
 @media only screen and (max-width: 768px) {
+    
+    .text-nos li{
+      list-style-type: none; /* Quita los puntos de la lista */
+      margin-bottom: 10px; /* Espacio entre cada ítem */
+    }
+
+
     .foto-team img {
         max-width: 100%; /* La imagen no excederá el ancho del contenedor */
         margin-top: 10px; /* Reduzco el margen superior para dispositivos móviles */
@@ -87,7 +118,7 @@ import Team from "../components/Team.astro";
         margin: 0 auto;
         background-color: #f391c2;
         padding: 20px;
-        border-radius: 10px;
+        
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         line-height: 2.5rem;
     }
@@ -159,7 +190,7 @@ import Team from "../components/Team.astro";
             margin: 0 auto; /* Centrar el texto horizontalmente */
             background-color: #f391c2; /* Color de fondo gris claro */
             padding: 20px; /* Espaciado interno */
-            border-radius: 10px; /* Bordes redondeados */
+             /* Bordes redondeados */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
             line-height: 2.5rem;
     }
