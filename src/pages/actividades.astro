@@ -79,9 +79,7 @@ import Footer from "../components/Footer.astro";
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         line-height: 2.5rem;
     }
-    .parr{
 
-    }
     
     /*estilos para computadora*/
     .galeria{
@@ -90,6 +88,11 @@ import Footer from "../components/Footer.astro";
     grid-auto-rows: auto;
     gap: 50px;
     padding: 20px;
+}
+@media (min-width: 961px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .image-container {
