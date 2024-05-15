@@ -13,6 +13,8 @@ import Team from "../components/Team.astro";
         <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
         <meta name="generator" content={Astro.generator} />
         <title>Nosotros</title>
+        <link rel="stylesheet" href="../css/global.css">
+
     </head>
   <body>
     <Navbar/>
@@ -23,11 +25,6 @@ import Team from "../components/Team.astro";
       </div>
     </div>
 
-    <div>
-      <div class="foto-team">
-          <img src="/l.jpg" alt="imgteam">
-      </div>  
-    </div>
 
     <div class="caja-text">
       <div class="text-nos">    
@@ -41,7 +38,19 @@ import Team from "../components/Team.astro";
 
             <h3>NUESTRA MISIÓN</h3> 
             Nos dedicamos a la atención y abordaje de la persona con discapacidad con daño neurológico, sustentado por un grupo de profesionales altamente calificados cuyos objetivos fundamentales son: asistencia, docencia y calidad humana, orientados a brindar servicio enfatizando en la calidad de vida, independencia e integración de nuestros pacientes en la sociedad.
+            
+            <div>
+              <div class="foto-team">
+                  <img src="/l.jpg" alt="imgteam">
+              </div>  
+            </div>
+        
+            
+            <br>
+            En nuestros centros nos esforzamos por ofrecer una amplia gama de actividades, terapias personalizadas y talleres grupales. 
+            Desde talleres creativos, de arte, cerámica, música, danza, teatro, hasta deportes adaptados, actividad física, huerta, cocina, AVD (actividades de la vida diaria), nutrición, ESI (educación sexual integral). Nuestras actividades están diseñadas para promover la diversión, el aprendizaje y el desarrollo personal. ¡Explora nuestra galería de imágenes para descubrir las emocionantes experiencias que ofrecemos a nuestra comunidad!
 
+            <br>
             En los Centros de Rehabilitación brindamos tratamiento integral. 
             <br>
             Contamos con 2 directoras Médicas, especialistas en Medicina Física y Rehabilitación/ Fisiatras, quienes coordinan el equipo de profesionales. 
@@ -82,14 +91,25 @@ import Team from "../components/Team.astro";
     </div >
 
     <div class="img-pauta">
-       <p>El Centro de Día está dirigido para:</p>
-      <img src="/b.jpg" alt="pautas">
-  </div>
+       <!-- <p>El Centro de Día está dirigido para:</p> -->
+      <img class="img1" src="/b.jpg" alt="pautas">
+      <img class="img2" src="/c.jpg" alt="pautas">
+    </div>
 
-  
-    <Team/>
-    <Footer/>
-    
+    <div class="caja-text">
+      <div class="text-nos">
+        <h3>Habilitaciones con las que contamos</h3>
+
+        <li>Habilitación del Ministerio de Salud (RUGEPRESA).</li>
+        <li>Categorización definitiva emitida por el Servicio Nacional de Rehabilitación.</li>
+        <li>Inscripción en el Registro Único de Prestadores de la Superintendencia de Servicios de Salud. </li>
+        <li>Habilitación Municipal.</li>
+        <li>Inscripción en la AFIP.</li>
+      </div>
+    </div>
+    <!-- <Team/> -->
+  <Footer/>
+
 
   </body>
 </html>
@@ -102,17 +122,25 @@ import Team from "../components/Team.astro";
 /* TODO ESTO PARA VERSION MOBILE O CELULAR */
 @media only screen and (max-width: 768px) {
 
-    .img-pauta img{
+    .img1{
       width: 100%;
     }
-    .img-pauta p{
+    .img2{
+      width: 100%
+    }
+    .img-pauta{
+      justify-content: center;
+      display: block;
+      width: 100%;
+    }
+    /* .img-pauta p{
       font: 700;
       font-size: 20px ;
       text-align: center;
-    }
+    } */
     
     .text-nos li{
-      list-style-type: none; /* Quita los puntos de la lista */
+
       margin-bottom: 10px; /* Espacio entre cada ítem */
     }
 
@@ -142,9 +170,7 @@ import Team from "../components/Team.astro";
         
     }
 
-    .caja-text {
-        padding: 30px 0; /* Reduzco el padding superior e inferior para dispositivos móviles */
-    }
+
 
     .text-nos {
       font-family: "Arial", sans-serif;
@@ -152,12 +178,11 @@ import Team from "../components/Team.astro";
         color: black;
         text-align: center;
         max-width: 100%;
-        margin: 0 auto;
+        margin: 30px 0 30px;
         background-color: #f391c2;
-        padding: 20px;
-        
+        /* padding: 20px; */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        line-height: 2.5rem;
+        /* line-height: 2.5rem; */
     }
 
     .cs-topper {
@@ -175,8 +200,16 @@ import Team from "../components/Team.astro";
 
 @media only screen and (min-width: 768px){
 
+
+    .img1{
+      width: 40%;
+    }
+    .img2{
+      width: 40%
+    }
     .img-pauta{
-      text-align: center;
+      justify-content: center;
+      display: flex;
     }
 
     .foto-team img {
@@ -214,10 +247,10 @@ import Team from "../components/Team.astro";
     }
 
     .caja-text{
-        display: flex;
+        /* display: flex; */
         flex-direction: column; /* Cambia la dirección de flexión a vertical */
         align-items: center; /* Centra el contenido horizontalmente */
-        padding: 50px 0;
+        /* padding: 50px 0; */
     }
 
     .text-nos{
@@ -226,69 +259,72 @@ import Team from "../components/Team.astro";
             color: black; /* Color de texto gris */
             text-align: center; /* Centrar el texto horizontalmente */
             max-width: 100%; /* Ancho máximo para el texto */
-            margin: 0 auto; /* Centrar el texto horizontalmente */
+            margin: 30px 0 30px; /* Centrar el texto horizontalmente */
             background-color: #f391c2; /* Color de fondo gris claro */
-            padding: 20px; /* Espaciado interno */
              /* Bordes redondeados */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
             line-height: 2.5rem;
     }
- :root {
-    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #ff6a3e;
-    --primaryLight: #ffba43;
-    --secondary: #ffba43;
-    --secondaryLight: #ffba43;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #4e4b66;
-    --bodyTextColorWhite: #fafbfc;
-    /* 13px - 16px */
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-    /* 31px - 49px */
-    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --bodyFontSize: 1rem;
-    /* 60px - 100px top and bottom */
-    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-  }
+    :root {
+        /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+        --primary: #ff6a3e;
+        --primaryLight: #ffba43;
+        --secondary: #ffba43;
+        --secondaryLight: #ffba43;
+        --headerColor: #1a1a1a;
+        --bodyTextColor: #4e4b66;
+        --bodyTextColorWhite: #fafbfc;
+        /* 13px - 16px */
+        --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+        /* 31px - 49px */
+        --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+        --bodyFontSize: 1rem;
+        /* 60px - 100px top and bottom */
+        --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+      }
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-  }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+      }
 
-  *,
-  *:before,
-  *:after {
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-  }
-  .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: inherit;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.25rem;
-    display: block;
-  }
+      *,
+      *:before,
+      *:after {
+        /* prevents padding from affecting height and width */
+        box-sizing: border-box;
+      }
+      .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+      }
 
 
 
-  
+      
 }
 
 </style>
+
+<script>
+  import "../js/script.js"
+</script>
