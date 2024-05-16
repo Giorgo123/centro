@@ -9,8 +9,8 @@ import Hero3 from "../components/Hero3.astro";
 // import Reviews from "../components/Reviews.astro";
 // import SideBySide from "../components/SideBySide.astro";
 // import Team from "../components/Team.astro";
-import Nosotros from "./Nosotros.astro";
-import Actividades from "./Actividades.astro";
+// import Nosotros from "./nosotros.astro";
+// import Actividades from "./actividades.astro";
 import { ViewTransitions } from "astro:transitions";
 
 
@@ -23,8 +23,8 @@ import { ViewTransitions } from "astro:transitions";
     <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
     <meta name="generator" content={Astro.generator} />
     <title>INSERIR</title>
-    // <ViewTransitions />
-    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <ViewTransitions />
   </head>
   <body>
     <Navbar/>
@@ -35,15 +35,21 @@ import { ViewTransitions } from "astro:transitions";
             Somos 3 centros privados, categorizados, dedicados a la rehabilitación del paciente pediátrico, joven y adulto, ubicado en la ciudad de Córdoba.
             Ofrecemos evaluación y tratamiento para rehabilitar y reeducar funciones en el paciente con alteraciones neurológicas y darle elementos que posibiliten su máxima funcionalidad tanto en lo físico, psíquico, educacional y social, con el objetivo de lograr la mejor integración a la comunidad. Así como también promover medidas que previenen la discapacidad.
           </span>
-      </div>
-    </div >
+      </div> 
+    </div> 
 
     <Hero/>
-    <img src="/q.jpg" alt="img2centro" class="img-centro">
+    <div class="banner">
+      <div class="carousel">
+        <img src="/p.jpg" alt="Imagen 1">
+        <img src="/q.jpg" alt="Imagen 2">
+        <img src="/r.jpg" alt="Imagen 3">
+      </div>
+  </div>
     <Hero2/>
-    <img src="/k.jpg" alt="img2centro" class="img-centro">
+    <img src="/k.jpg" alt="img2centro" class="img-centro2">
     <Hero3/>
-    <img src="/j.jpg" alt="img2centro" class="img-centro">
+    <img src="/j.jpg" alt="img2centro" class="img-centro2">
     <!-- <SideBySide /> -->
     <!-- <Team /> -->
     <!-- <Pricing /> -->
@@ -55,30 +61,152 @@ import { ViewTransitions } from "astro:transitions";
 
 <style>
 /* ESTO ES PARA MOBILE */
-@media only screen and {(max-width: 768px)
-  .text-nos {
-      font-family: "Arial", sans-serif;
-        font-size: 18px;
-        color: black;
-        text-align: center;
-        max-width: 100%;
-        margin: 0 auto;
-        background-color: #f391c2;
-        /* padding: 20px; */
-        
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        line-height: 2.5rem;
-    }
+@media only screen and (max-width: 768px){
 
-    .caja-text {
-        padding: 30px 0; /* Reduzco el padding superior e inferior para dispositivos móviles */
-    }
-    /* Estilos para los elementos del cuerpo */
+    .img-centro2{
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+  }
+
+  .banner {
+  position: relative;
+  width: 100%;
+  height: auto; /* Ajusta la altura según sea necesario */
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  width: 100%; /* Ancho total de las imágenes */
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
 }
 
 
+.text-nos {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  background-color: #f391c2;
+  padding: 20px;
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 20px; /* Margen exterior */
+}
+
+.text-nos h3 {
+  font-size: 28px;
+  margin-bottom: 10px; /* Espacio entre el título y el texto */
+}
+
+.text-nos span {
+  display: block;
+  line-height: 1.5;
+}
+
+
+}
+
 /* ESTO ES PARA COMPUTADORA */
-  :root {
+@media only screen and (min-width: 768px){
+ 
+  .cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  .cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+  }
+
+  /* .cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+  } */
+
+  .img-centro2{
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+  }
+  .banner {
+  position: relative;
+  width: 100%;
+  height: auto; /* Ajusta la altura según sea necesario */
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  width: 100%; /* Ancho total de las imágenes */
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.text-nos {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  background-color: #f391c2;
+  padding: 20px;
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 20px; /* Margen exterior */
+}
+
+.text-nos h3 {
+  font-size: 28px;
+  margin-bottom: 10px; /* Espacio entre el título y el texto */
+}
+
+.text-nos span {
+  display: block;
+  line-height: 1.5;
+}
+
+}
+
+:root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     --primary: #ff6a3e;
     --primaryLight: #ffba43;
@@ -120,97 +248,13 @@ import { ViewTransitions } from "astro:transitions";
     box-sizing: border-box;
   }
 
-/* Estilos para los elementos del cuerpo */
-body > * {
-  opacity: 0; /* Inicialmente ocultar los elementos */
-  transform: translateX(-100%); /* Mover los elementos fuera de la pantalla */
-  transition: opacity 0.5s, transform 0.5s; /* Transiciones suaves */
-}
-
-/* Clase para mostrar los elementos */
-.show {
-  opacity: 1; /* Mostrar los elementos */
-  transform: translateX(0); /* Mostrar los elementos centrados */
-}
-
-
-  .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: inherit;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.25rem;
-    display: block;
-  }
-
-  .cs-title {
-    font-size: var(--headerFontSize);
-    font-weight: 900;
-    line-height: 1.2em;
-    text-align: inherit;
-    max-width: 43.75rem;
-    margin: 0 0 1rem 0;
-    color: var(--headerColor);
-    position: relative;
-  }
-
-  .cs-text {
-    font-size: var(--bodyFontSize);
-    line-height: 1.5em;
-    text-align: inherit;
-    width: 100%;
-    max-width: 40.625rem;
-    margin: 0;
-    color: var(--bodyTextColor);
-  }
-
-  .img-centro{
-      position: relative;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-
-  }
-
-
-    .text-nos{
-      font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente a una que prefieras */
-            font-size: 24px; /* Tamaño medio para el texto */
-            color: black; /* Color de texto gris */
-            text-align: center; /* Centrar el texto horizontalmente */
-            max-width: 100%; /* Ancho máximo para el texto */
-            margin: 0 auto; /* Centrar el texto horizontalmente */
-            background-color: #f391c2; /* Color de fondo gris claro */
-            padding: 20px; /* Espaciado interno */
-             /* Bordes redondeados */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            line-height: 2.5rem;
-    }
-
-    .caja-text{
-        display: flex;
-        flex-direction: column; /* Cambia la dirección de flexión a vertical */
-        align-items: center; /* Centra el contenido horizontalmente */
-        /* padding: 50px 0; */
-    }
-
 
 
 </style>
 
-// <!-- <script>document.addEventListener("DOMContentLoaded", function() {
-//   const fadeInElements = document.querySelectorAll('.fade-in');
-//   fadeInElements.forEach(element => {
-//       element.classList.add('show'); // Agregar la clase 'show' para activar la transición de fade-in
-//   });
-// }); -->
-// <!-- </script> -->   
+ 
 
 <script>
-  import "../js/script.js"
- </script>
+import "../js/script.js"
+</script>
+
