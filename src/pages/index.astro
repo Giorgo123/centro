@@ -61,7 +61,7 @@ import { ViewTransitions } from "astro:transitions";
 
 <style>
 /* ESTO ES PARA MOBILE */
-@media only screen and {(max-width: 768px)
+@media only screen and (max-width: 768px){
   .text-nos {
       font-family: "Arial", sans-serif;
         font-size: 18px;
@@ -79,8 +79,42 @@ import { ViewTransitions } from "astro:transitions";
     .caja-text {
         padding: 30px 0; /* Reduzco el padding superior e inferior para dispositivos móviles */
     }
-    /* Estilos para los elementos del cuerpo */
+
+    .banner {
+      overflow: hidden;
+  width: 100%;
+  position: relative;
 }
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+}
+
+.img-centro2{
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+  }
+
+
+
+
+
+
+
 
 
 /* ESTO ES PARA COMPUTADORA */
@@ -220,6 +254,45 @@ import { ViewTransitions } from "astro:transitions";
  
 
 <script>
-import "../js/script.js"
+import "../../src/js/script.js"
 </script>
 
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  let carousel = document.querySelector('.carousel');
+  let images = document.querySelectorAll('.carousel img');
+  let currentIndex = 0;
+  const totalImages = images.length;
+  const slideInterval = 3000; // Cambia esta variable para ajustar la velocidad de desplazamiento
+
+  function setCarouselWidth() {
+    const imageWidth = window.innerWidth; // Ancho de la ventana
+    carousel.style.width = totalImages * imageWidth + 'px';
+
+    images.forEach(function(img) {
+      img.style.width = imageWidth + 'px';
+    });
+
+    // Ajustar la posición actual
+    let newPosition = -currentIndex * imageWidth;
+    carousel.style.transform = `translateX(${newPosition}px)`;
+  }
+
+  setCarouselWidth();
+
+  window.addEventListener('resize', setCarouselWidth);
+
+  setInterval(nextSlide, slideInterval);
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    let newPosition = -currentIndex * window.innerWidth;
+    carousel.style.transition = 'transform 0.5s ease';
+    carousel.style.transform = `translateX(${newPosition}px)`;
+  }
+});
+
+
+</script>
