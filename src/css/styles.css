@@ -1,0 +1,11 @@
+body > *  {
+    opacity: 0; /* Inicialmente ocultar los elementos */
+    transform: translateX(-100%); /* Mover los elementos fuera de la pantalla */
+    transition: opacity 1s, transform 1s; /* Transiciones suaves */
+  }
+
+  /* Clase para mostrar los elementos */
+  .show {
+    opacity: 1; /* Mostrar los elementos */
+    transform: translateX(0); /* Mostrar los elementos centrados */
+  }
