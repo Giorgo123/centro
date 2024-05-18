@@ -13,7 +13,7 @@ import Team from "../components/Team.astro";
         <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
         <meta name="generator" content={Astro.generator} />
         <title>Nosotros</title>
-        <link rel="stylesheet" href="../src/css/styles.css">
+        <link rel="stylesheet" href="../css/styles.css">
 
     </head>
   <body>
@@ -220,6 +220,7 @@ import Team from "../components/Team.astro";
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
             line-height: 2.5rem;
             padding: 20px;
+            /* width: 100%; */
     }
 
     .cs-topper {
@@ -235,6 +236,7 @@ import Team from "../components/Team.astro";
     flex-direction: column;
     padding: 20px;
     background-color: #f391c2;
+    /* width: 100%; */
 }
 
 .image-container {
@@ -390,6 +392,7 @@ import Team from "../components/Team.astro";
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
             line-height: 2.5rem;
             padding: 20px;
+            width: 100%;
     }
     .caja-text2{
         /* display: flex; */
@@ -480,6 +483,20 @@ import Team from "../components/Team.astro";
 
 
 
+
+      body > * {
+    opacity: 0; /* Inicialmente ocultar los elementos */
+    transform: translateX(-100%); /* Mover los elementos fuera de la pantalla */
+    transition: opacity 1s, transform 1s; /* Transiciones suaves */
+  }
+
+  /* Clase para mostrar los elementos */
+  .show{
+    opacity: 1; /* Mostrar los elementos */
+    transform: translateX(0); /* Mostrar los elementos centrados */
+  }
+
+ 
       
 }
 

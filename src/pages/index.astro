@@ -96,9 +96,6 @@ import { ViewTransitions } from "astro:transitions";
   width: 100%;
   flex-shrink: 0;
 }
-
-}
-
 .img-centro2{
       position: relative;
       top: 0;
@@ -122,10 +119,7 @@ import { ViewTransitions } from "astro:transitions";
 }
 
 
-
-
-
-
+}
 
 
 /* ESTO ES PARA COMPUTADORA */
@@ -259,6 +253,20 @@ import { ViewTransitions } from "astro:transitions";
   }
 
 
+
+  body > * {
+    opacity: 0; /* Inicialmente ocultar los elementos */
+    transform: translateX(-100%); /* Mover los elementos fuera de la pantalla */
+    transition: opacity 1s, transform 1s; /* Transiciones suaves */
+  }
+
+  /* Clase para mostrar los elementos */
+  .show{
+    opacity: 1; /* Mostrar los elementos */
+    transform: translateX(0); /* Mostrar los elementos centrados */
+  }
+
+ 
 
 </style>
 
