@@ -1,0 +1,125 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="stylesheet" href="../src/css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+
+    </head>
+    <body>
+            <Navbar></Navbar>
+            <main>
+                <slot/>
+            </main>
+            <div class="whatsapp-container">
+                <a href="https://api.whatsapp.com/send?phone=3516789473" target="_blank" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <Footer></Footer>
+        <script src="../js/script.js"></script>
+    </body>
+</html>
+
+<style is:global>
+
+:root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #ff6a3e;
+    --primaryLight: #ffba43;
+    --secondary: #ffba43;
+    --secondaryLight: #ffba43;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+  }
+
+  *,
+  *:before,
+  *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+  }
+
+
+   /* Estilos CSS */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button {
+    display: block;
+    width: 60px; /* Ancho del botón aumentado */
+    height: 60px; /* Altura del botón aumentada */
+    background-color: #25d366; /* Color de fondo del botón */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 65px; /* Alineación vertical del contenido */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon {
+    background-image: url('../../public/whatsapp.png'); /* Ruta relativa a la imagen descargada */
+    width: 100%; /* Ancho de la imagen */
+    height: 100%; /* Altura de la imagen */
+    background-size: cover;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.3);
+}
+
+.fab{
+    color: #fff; /* Cambia el color del icono según tus preferencias */
+    font-size: 30px; /* Tamaño del icono aumentado */
+}
+
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    ;
+    /* background-color: #13151a; */
+    /* background-size: 224px; */
+    /* color-scheme: dark light; */
+}
+
+
+ 
+
+</style>

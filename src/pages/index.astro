@@ -1,7 +1,7 @@
 ---
 // import CTA from "../components/CTA.astro";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+// import Navbar from "../components/Navbar.astro";
+// import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Hero2 from "../components/Hero2.astro"
 import Hero3 from "../components/Hero3.astro";
@@ -12,52 +12,59 @@ import Hero3 from "../components/Hero3.astro";
 // import Nosotros from "./nosotros.astro";
 // import Actividades from "./actividades.astro";
 import { ViewTransitions } from "astro:transitions";
-
-
+import Layout from "../layouts/global.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
-    <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
-    <meta name="generator" content={Astro.generator} />
-    <title>INSERIR</title>
-    <link rel="stylesheet" href="../src/css/styles.css">
-    <ViewTransitions />
-  </head>
-  <body>
-    <Navbar/>
-    <div class="caja-text">
-      <div class="text-nos">    
-          <h3>CENTRO INSERIR</h3>   
-          <span>
-            Somos 3 centros privados, categorizados, dedicados a la rehabilitación del paciente pediátrico, joven y adulto, ubicado en la ciudad de Córdoba.
-            Ofrecemos evaluación y tratamiento para rehabilitar y reeducar funciones en el paciente con alteraciones neurológicas y darle elementos que posibiliten su máxima funcionalidad tanto en lo físico, psíquico, educacional y social, con el objetivo de lograr la mejor integración a la comunidad. Así como también promover medidas que previenen la discapacidad.
-          </span>
-      </div> 
-    </div> 
 
-    <Hero/>
-    <div class="banner">
-      <div class="carousel">
-        <img src="/p.jpg" alt="Imagen 1">
-        <img src="/q.jpg" alt="Imagen 2">
-        <img src="/r.jpg" alt="Imagen 3">
+<Layout>
+    <main>  <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
+        <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
+        <meta name="generator" content={Astro.generator} />
+        <!-- <link rel="stylesheet" href="../css/styles.css"> -->
+        <title>INSERIR</title>
+        <!-- <link rel="stylesheet" href="../src/css/styles.css"> -->
+        <!-- <ViewTransitions /> -->
+      </head>
+      <body>
+        <!-- <Navbar/> -->
+
+        <div class="caja-text slide-in">
+          <div class="text-nos">    
+              <h3>CENTRO INSERIR</h3>   
+              <span>
+                Somos 3 centros privados, categorizados, dedicados a la rehabilitación del paciente pediátrico, joven y adulto, ubicado en la ciudad de Córdoba.
+                Ofrecemos evaluación y tratamiento para rehabilitar y reeducar funciones en el paciente con alteraciones neurológicas y darle elementos que posibiliten su máxima funcionalidad tanto en lo físico, psíquico, educacional y social, con el objetivo de lograr la mejor integración a la comunidad. Así como también promover medidas que previenen la discapacidad.
+              </span>
+              
+          </div> 
+        </div> 
+    
+        <Hero/>
+        <div class="banner">
+          <div class="carousel">
+            <img src="/p.jpg" alt="Imagen 1">
+            <img src="/q.jpg" alt="Imagen 2">
+            <img src="/r.jpg" alt="Imagen 3">
+          </div>
       </div>
-  </div>
-    <Hero2/>
-    <img src="/k.jpg" alt="img2centro" class="img-centro2">
-    <Hero3/>
-    <img src="/j.jpg" alt="img2centro" class="img-centro2">
-    <!-- <SideBySide /> -->
-    <!-- <Team /> -->
-    <!-- <Pricing /> -->
-    <!-- <CTA /> -->
-    <Footer />
+        <Hero2/>
+        <img src="/k.jpg" alt="img2centro" class="img-centro2">
+        <Hero3/>
+        <img src="/j.jpg" alt="img2centro" class="img-centro2">
+        <!-- <SideBySide /> -->
+        <!-- <Team /> -->
+        <!-- <Pricing /> -->
+        <!-- <CTA /> -->
+        <!-- <Footer /> -->
+    
+      </body>
+    </html>
+  </main>
+</Layout>
 
-  </body>
-</html>
 
 <style>
 /* ESTO ES PARA MOBILE */
@@ -210,108 +217,8 @@ import { ViewTransitions } from "astro:transitions";
 
 }
 
-:root {
-    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #ff6a3e;
-    --primaryLight: #ffba43;
-    --secondary: #ffba43;
-    --secondaryLight: #ffba43;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #4e4b66;
-    --bodyTextColorWhite: #fafbfc;
-    /* 13px - 16px */
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-    /* 31px - 49px */
-    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --bodyFontSize: 1rem;
-    /* 60px - 100px top and bottom */
-    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-  }
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-  }
-
-  *,
-  *:before,
-  *:after {
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-  }
-
-
-
-  body > * {
-    opacity: 0; /* Inicialmente ocultar los elementos */
-    transform: translateX(-100%); /* Mover los elementos fuera de la pantalla */
-    transition: opacity 1s, transform 1s; /* Transiciones suaves */
-  }
-
-  /* Clase para mostrar los elementos */
-  .show{
-    opacity: 1; /* Mostrar los elementos */
-    transform: translateX(0); /* Mostrar los elementos centrados */
-  }
-
- 
 
 </style>
 
  
-
-<script>
-import "../../src/js/script.js"
-</script>
-
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function() {
-  let carousel = document.querySelector('.carousel');
-  let images = document.querySelectorAll('.carousel img');
-  let currentIndex = 0;
-  const totalImages = images.length;
-  const slideInterval = 3000; // Cambia esta variable para ajustar la velocidad de desplazamiento
-
-  function setCarouselWidth() {
-    const imageWidth = window.innerWidth; // Ancho de la ventana
-    carousel.style.width = totalImages * imageWidth + 'px';
-
-    images.forEach(function(img) {
-      img.style.width = imageWidth + 'px';
-    });
-
-    // Ajustar la posición actual
-    let newPosition = -currentIndex * imageWidth;
-    carousel.style.transform = `translateX(${newPosition}px)`;
-  }
-
-  setCarouselWidth();
-
-  window.addEventListener('resize', setCarouselWidth);
-
-  setInterval(nextSlide, slideInterval);
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    let newPosition = -currentIndex * window.innerWidth;
-    carousel.style.transition = 'transform 0.5s ease';
-    carousel.style.transform = `translateX(${newPosition}px)`;
-  }
-});
-
-
-</script>

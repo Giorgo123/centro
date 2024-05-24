@@ -1,51 +1,54 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+// import Navbar from "../components/Navbar.astro";
+// import Footer from "../components/Footer.astro";
+import Layout from "../layouts/global.astro";
+
 ---
 
-<html lang="en">
+<Layout>
+    <html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/Inserir Transparente.svg" />
         <meta name="viewport" content="width=device-width", initial-scale=1.0"/>
         <meta name="generator" content={Astro.generator} />
         <title>Actividades</title>
-        <link rel="stylesheet" href="../css/styles.css">
+        <!-- <link rel="stylesheet" href="../css/styles.css"> -->
     </head>
     <body>
-        <Navbar/>
+        <!-- <Navbar/> -->
         
-        <h1 class="tit">ACTIVIDADES QUE REALIZAMOS</h1>
+        <h1 class="tit slide-in">ACTIVIDADES QUE REALIZAMOS</h1>
 
-        <div class="text-parr">        
+        <div class="text-parr slide-in">        
             <span class="parr">
                 En nuestros centros nos esforzamos por ofrecer una amplia gama de actividades, terapias personalizadas y talleres grupales. 
                 Desde talleres creativos, de arte, cerámica, música, danza, teatro, hasta deportes adaptados, actividad física, huerta, cocina, AVD (actividades de la vida diaria), nutrición, ESI (educación sexual integral). Nuestras actividades están diseñadas para promover la diversión, el aprendizaje y el desarrollo personal. ¡Explora nuestra galería de imágenes para descubrir las emocionantes experiencias que ofrecemos a nuestra comunidad!
             </span>
         </div>
         
-        <div class="galeria">
-            <div class="image-container">
+        <div class="galeria slide-in">
+            <div class="image-container slide-in">
                 <img src="/d.jpg" alt="Actividad 1">
                 <div class="overlay">Actividad 1</div>
             </div>
-            <div class="image-container">
+            <div class="image-container slide-in">
                 <img src="/e.jpg" alt="Actividad 2">
                 <div class="overlay">Actividad 2</div>
             </div>
-            <div class="image-container">
+            <div class="image-container slide-in">
                 <img src="/f.jpg" alt="Actividad 3">
                 <div class="overlay">Actividad 2</div>
             </div>
-            <div class="image-container">
+            <div class="image-container slide-in">
                 <img src="/g.jpg" alt="Actividad 4">
                 <div class="overlay">Actividad 2</div>
             </div>
-            <div class="image-container">
+            <div class="image-container slide-in">
                 <img src="/h.jpg" alt="Actividad 5">
                 <div class="overlay">Actividad 2</div>
             </div>
-            <div class="image-container">
+            <div class="image-container slide-in">
                 <img src="/i.jpg" alt="Actividad 6">
                 <div class="overlay">Actividad 2</div>
             </div>
@@ -54,11 +57,13 @@ import Footer from "../components/Footer.astro";
         
 
 
-        <Footer />
+        <!-- <Footer /> -->
 
 
     </body>
 </html>
+</Layout>
+
 
 <style>
     .tit{
@@ -135,65 +140,6 @@ import Footer from "../components/Footer.astro";
     position: relative;
     overflow: hidden;
 }
-:root {
-    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #ff6a3e;
-    --primaryLight: #ffba43;
-    --secondary: #ffba43;
-    --secondaryLight: #ffba43;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #4e4b66;
-    --bodyTextColorWhite: #fafbfc;
-    /* 13px - 16px */
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-    /* 31px - 49px */
-    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --bodyFontSize: 1rem;
-    /* 60px - 100px top and bottom */
-    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-  }
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-  }
-  *,
-  *:before,
-  *:after {
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-  }
-
-
-
-
-  body > * {
-    opacity: 0; /* Inicialmente ocultar los elementos */
-    transform: translateX(-100%); /* Mover los elementos fuera de la pantalla */
-    transition: opacity 1s, transform 1s; /* Transiciones suaves */
-  }
-
-  /* Clase para mostrar los elementos */
-  .show{
-    opacity: 1; /* Mostrar los elementos */
-    transform: translateX(0); /* Mostrar los elementos centrados */
-  }
-
- 
 </style>
 
-<script>
-    import "../../src/js/script.js"
-</script>

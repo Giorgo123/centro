@@ -1,0 +1,21 @@
+/* Define la animación */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Desplazamiento desde la derecha */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aplica la animación a los elementos */
+.slide-in {
+  opacity: 0; /* Inicialmente ocultar los elementos */
+}
+
+/* Clase para mostrar los elementos */
+.show {
+  animation: slideInFromRight 0.5s ease forwards; /* Aplica la animación */
+}
