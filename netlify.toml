@@ -1,6 +1,8 @@
 [build]
-  base = "src"
-  publish = "public"
+  publish = "dist" # Directorio de compilación
+  command = "npm run build" # Comando de compilación
 
-[[plugins]]
-  package = "@astrojs/netlify"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
