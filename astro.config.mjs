@@ -1,17 +1,9 @@
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify/functions';
 
-// https://astro.build/confi
-// astro.config.mj
-
-// astro.config.mjs
-
-export default {
-    render: {
-      // Importar y activar script.js en cada página
-      // usando una función de transformación de HTML
-      html: (html) => {
-        return html.replace('</head>', '<script type="module" src="../js/script.js"></script></head>');
-      }
-    }
-  };
-  
+// https://astro.build/config
+export default defineConfig({
+  site: 'https://stately-gumdrop-a6d22f.netlify.app/', // Reemplaza con tu URL de Netlify
+  outDir: 'dist',
+  adapter: netlify()
+});
