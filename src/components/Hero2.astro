@@ -3,10 +3,10 @@
 <section id="hero-150">
   <div class="cs-container">
     <div class="cs-flex-group slide-in">
-      <span class="cs-topper">Centro de Rehabilitacion INSERIR Niños
+      <span class="cs-topper slide-in">Centro de Rehabilitacion INSERIR Niños
       </span>
-      <h1 class="cs-title">¡Te damos la bienvenida!</h1>
-      <p class="cs-text">
+      <h1 class="cs-title slide-in">¡Te damos la bienvenida!</h1>
+      <p class="cs-text slide-in">
       ¡Descubre el Centro de Rehabilitacion para Niños de INSERIR!
       </p>
       <!-- <a href="" class="cs-button-solid">Explorar más</a> -->
@@ -47,10 +47,9 @@
         <a class="cs-link" href="">
           <h2 class="cs-h2">Nuestro numero de contacto
           </h2>
-          <p class="cs-item-text">
+          <a class="cs-item-text" href="tel:+3513575117">
             Cel:3513575117
-
-          </p>
+          </a>
         </a>
       </li>
     </ul>
@@ -516,16 +515,15 @@
       background-position: center;
       background-repeat: no-repeat;
       /* creates parallax effect on background image */
-      background-attachment: fixed;
+      /* background-attachment: fixed; */
       /* remove img tag so we can make parallax work */
     }
     #hero-150 .cs-picture img {
-      position: absolute;
+      position: relative;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 110%;
         width: 100%;
-        object-fit: cover;
     }
   }
   
