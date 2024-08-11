@@ -2,64 +2,70 @@
 <section id="footer-1390">
   <div class="cs-container">
     <div class="cs-top">
-      <a aria-label="go back to home" class="cs-logo" href="">
-        <img
-          class="cs-logo-img"
-          loading="lazy"
-          decoding="async"
-          src="/Inserir Transparente.svg"
-          alt="logo"
-          width="209"
-          height="40"
-        />
-      </a>
-      <ul class="cs-ul">
-        <li class="cs-li">
-          <a href="" class="cs-link">Inicio</a>
-        </li>
-        <li class="cs-li">
-          <a href="actividades" class="cs-link">Actividades</a>
-        </li>
-        <li class="cs-li">
-          <a href="nosotros" class="cs-link">Nosotros</a>
-        </li>
-      </ul>
+      <!-- Aquí puedes agregar contenido adicional, como un menú de navegación superior o enlaces rápidos -->
     </div>
     <div class="cs-bottom">
-      <!--Social-->
-      <li class="cs-social-li">
-        <a
-        href="https://www.instagram.com/tu_usuario"
-        class="cs-social-link"
-        aria-label="Instagram"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
-          class="cs-social-icon cs-default"
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-          alt="Instagram icon"
-          loading="lazy"
-          decoding="async"
-          width="24"
-          height="24"
-          aria-hidden="true"
-        />
-      </a>
-      
-      <a>PARA CONTACTARNOS:</a>
-      
-
-      </li>
-      <span class="cs-copyright">
-        © Copyright 2024 - <a href="https://www.copyright.com.au/about-us/governance/annual-reports/copyright-agency-annual-report-2022/" class="cs-copyright-link"
-          >Stitch Agency</a
-        >
-      </span>
+      <div class="cs-logo-container">
+        <a aria-label="go back to home" class="cs-logo" href="">
+          <img
+            class="cs-logo-img"
+            loading="lazy"
+            decoding="async"
+            src="/Inserir Transparente.svg"
+            alt="logo"
+            width="209"
+            height="40"
+          />
+        </a>
+      </div>
+      <ul class="cs-social-ul">
+        <div class="cs-social-text">Podes seguirnos en instagram 😀</div>
+        <li class="cs-social-li"> 
+          <a
+            href="https://www.instagram.com/tu_usuario"
+            class="cs-social-link"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="cs-social-icon"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+              alt="Instagram icon"
+              loading="lazy"
+              decoding="async"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            />
+          </a>
+        </li>
+      </ul>
+      <ul class="cs-ul">
+        <li class="cs-li"><a href="/" class="cs-link">Inicio</a></li>
+        <li class="cs-li"><a href="actividades" class="cs-link">Actividades</a></li>
+        <li class="cs-li"><a href="nosotros" class="cs-link">Nosotros</a></li>
+      </ul>
+      <div class="cs-contact">
+        <p>Para contactarnos:</p>
+        <a class="cs-item-text" href="tel:+3516789473">
+          <i class="fa fa-phone phone-icon"></i> Cel: 3516789473
+        </a>
+        <a class="cs-item-text" href="tel:+3513575117">
+          <i class="fa fa-phone phone-icon"></i> Cel: 3513575117
+        </a>
+        <a class="cs-item-text" href="tel:+3517418493">
+          <i class="fa fa-phone phone-icon"></i> Cel: 3517418493
+        </a>
+      </div>
       <div class="cs-flex">
-        <a href="https://www.conicet.gov.ar/terminos-de-uso-y-politicas-de-privacidad/" class="cs-copyright-link">Politicas de privacidad</a>
-        <span class="cs-separater">|</span>
-        <a href="https://www.conicet.gov.ar/terminos-de-uso-y-politicas-de-privacidad/" class="cs-copyright-link">Terminos de uso</a>
+        <span class="cs-copyright">
+          © Copyright 2024 - <a href="https://www.copyright.com.au/about-us/governance/annual-reports/copyright-agency-annual-report-2022/" class="cs-copyright-link">Stitch Agency</a>
+        </span>
+        <span class="cs-separator">|</span>
+        <a href="https://www.conicet.gov.ar/terminos-de-uso-y-politicas-de-privacidad/" class="cs-copyright-link">Políticas de privacidad</a>
+        <span class="cs-separator">|</span>
+        <a href="https://www.conicet.gov.ar/terminos-de-uso-y-politicas-de-privacidad/" class="cs-copyright-link">Términos de uso</a>
       </div>
     </div>
   </div>
@@ -73,137 +79,227 @@
   /* Mobile - 360px */
   @media only screen and (min-width: 0rem) {
     #footer-1390 {
-      padding: var(--sectionPadding);
-      background-color:#660085;
-      position: relative;
-      z-index: 1;
-    }
-    #footer-1390 .cs-container {
-      width: 100%;
-      max-width: 80rem;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    #footer-1390 .cs-top {
-      width: 100%;
-      margin-bottom: 2.5rem;
-      /* 24px - 64px */
-      padding-bottom: clamp(1.5rem, 5vw, 4rem);
-      border-bottom: 1px solid #484848;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      /* 24px - 40px */
-      gap: clamp(1.25rem, 4vw, 2.5rem);
-    }
-    #footer-1390 .cs-ul {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      row-gap: 0.5rem;
-      /* 24px - 36px */
-      column-gap: clamp(1.5rem, 4vw, 2.25rem);
-    }
-    #footer-1390 .cs-li {
-      list-style: none;
-      
-    }
-    #footer-1390 .cs-link {
+  padding: var(--sectionPadding);
+  background-color: #660085;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+#footer-1390 .cs-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#footer-1390 .cs-top {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  padding-bottom: clamp(1.5rem, 5vw, 4rem);
+  border-bottom: 1px solid #484848;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+#footer-1390 .cs-ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+  column-gap: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+#footer-1390 .cs-li {
+  list-style: none;
+}
+
+#footer-1390 .cs-link {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.5em;
+  text-decoration: none;
+  margin: 0;
+  color: #bababa;
+  transition: color 0.3s;
+  font-size: 20px;
+}
+
+#footer-1390 .cs-link:hover {
+  color: var(--primary);
+}
+
+#footer-1390 .cs-logo {
+  max-width: 13.0625rem;
+  height: auto;
+  display: block;
+}
+
+#footer-1390 .cs-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#footer-1390 .cs-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#footer-1390 .cs-social {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#footer-1390 .cs-social-li {
+  list-style: none;
+}
+
+#footer-1390 .cs-social-link {
+  width: 5rem;
+  height: 5rem;
+  /* background-color: #333; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#footer-1390 .cs-social-link:hover {
+  background-color: var(--primary);
+  transform: scale(1.1);
+}
+
+#footer-1390 .cs-social-icon {
+  width: 3rem;
+  height: auto;
+  display: block;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+#footer-1390 .cs-social-link:hover .cs-social-icon {
+  opacity: 1;
+}
+
+#footer-1390 .cs-copyright {
+  font-size: 1rem;
+  color: #bababa;
+  line-height: 1.5em;
+  margin: 0;
+  text-align: center;
+}
+
+#footer-1390 .cs-copyright-link,
+#footer-1390 .cs-separater {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #bababa;
+  transition: color 0.3s;
+}
+
+#footer-1390 .cs-copyright-link:hover,
+#footer-1390 .cs-separater:hover {
+  color: var(--primary);
+}
+
+#footer-1390 .cs-separater {
+  margin: 0 1rem;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  #footer-1390 .cs-container {
+    align-items: center;
+  }
+
+  #footer-1390 .cs-top,
+  #footer-1390 .cs-bottom {
+    align-items: center;
+    text-align: center;
+  }
+
+  #footer-1390 .cs-ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+    .cs-item-text {
       /* 14px - 16px */
-      font-size: clamp(0.875rem, 1.5vw, 1rem);
-      line-height: 1.5em;
-      text-decoration: none;
-      margin: 0;
-      color: #bababa;
-      display: block;
-      transition: color 0.3s;
       font-size: 20px;
-    }
-    #footer-1390 .cs-link:hover {
-      color: var(--primary);
-    }
-    #footer-1390 .cs-logo {
-      width: 100%;
-      max-width: 13.0625rem;
-      height: auto;
-      display: block;
-    }
-    #footer-1390 .cs-logo-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      background-color: ;
-    }
-    #footer-1390 .cs-bottom {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    #footer-1390 .cs-social {
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    #footer-1390 .cs-social-li {
-      list-style: none;
-    }
-    #footer-1390 .cs-social-link {
-      width: 5rem;
-      height: 5rem;
-      background-color: ;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s;
-    }
-    #footer-1390 .cs-social-link:hover {
-      background-color: var(--primary);
-    }
-    #footer-1390 .cs-social-link:hover .cs-social-icon {
-      /* filter: grayscale(1) brightness(1000%);
-      opacity: 1; */
-    }
-    #footer-1390 .cs-social-icon {
-      width: 5rem;
-      height: auto;
-      display: block;
-      opacity: 0.6;
-      transition: opacity 0.3s;
-    }
-    #footer-1390 .cs-copyright {
-      font-size: 1rem;
-      color: #bababa;
-      line-height: 1.5em;
-      margin: 0;
-      display: block;
-    }
-    #footer-1390 .cs-copyright-link,
-    #footer-1390 .cs-separater {
-      font-size: 1rem;
+      max-width: 31.25rem;
+      color: var(--bodyTextColorWhite);
       text-decoration: none;
-      color: #bababa;
-      transition: color 0.3s;
-    }
-    #footer-1390 .cs-copyright-link:hover,
-    #footer-1390 .cs-separater:hover {
-      color: var(--primary);
-    }
-    #footer-1390 .cs-separater {
-      margin: 0 1rem;
+      cursor: pointer;  
+      font-weight: 800;
+      transition: transform 0.3s ease;
       display: inline-block;
+      transform-origin: center; /* Escala desde el centro del elemento */
     }
+
+    .cs-item-text:hover{
+        color:#2b8dab;
+        text-decoration: underline;
+        transform: scale(1.2);
+      }
+
+    .phone-icon {
+        margin-right: 8px; /* Espacio entre el icono y el texto */
+        font-size: 20px; /* Tamaño del icono, ajusta según tu preferencia */
+        transition: transform 0.3s ease; /* Transición suave para la animación */
+        text-align: center;
+    }
+
+    .phone-icon:hover {
+        transform: scale(1.5); /* Escala el icono al pasar el cursor */
+    }
+
+    .cs-contact p{
+      border-top: 1px solid #484848;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+  
+
+    .cs-social-li{
+      display: flex;
+      justify-content: center;
+    }
+
+    .cs-social-text{
+      border-top: 1px solid #484848;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 3rem;
+    }
+
+    .cs-social-ul{
+      padding: 20px;
+    }
+
+
   }
   /* Tablet - 768px */
   @media only screen and (min-width: 48rem) {

@@ -48,7 +48,7 @@
           <h2 class="cs-h2">Nuestro numero de contacto
           </h2>
           <a class="cs-item-text" href="tel:+3513575117">
-            Cel:3513575117
+            <i class="fa fa-phone phone-icon"></i> Cel: 3513575117
           </a>
         </a>
       </li>
@@ -401,8 +401,32 @@
       padding: 0;
       max-width: 31.25rem;
       color: var(--bodyTextColorWhite);
+      text-decoration: none;
+      cursor: pointer;  
+      font-weight: 800;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      transform-origin: center; /* Escala desde el centro del elemento */
     }
+
+      #hero-150 .cs-item-text:hover{
+        color:#2b8dab;
+        text-decoration: underline;
+        transform: scale(1.2);
   }
+  .phone-icon {
+        margin-right: 8px; /* Espacio entre el icono y el texto */
+        font-size: 20px; /* Tamaño del icono, ajusta según tu preferencia */
+        transition: transform 0.3s ease; /* Transición suave para la animación */
+        text-align: center;
+    }
+
+    .phone-icon:hover {
+        transform: scale(1.5); /* Escala el icono al pasar el cursor */
+    }
+
+
+}
   /* Tablet - 768px */
   @media only screen and (min-width: 48rem) {
     #hero-150 {
