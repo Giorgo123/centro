@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 
-
+// astro.config.mjs
 export default defineConfig({
-  outDir: './public_html',
-  // otras configuraciones
+  buildOptions: {
+    outDir: './dist',
+  },
+  integrations: [netlify()],
 });
