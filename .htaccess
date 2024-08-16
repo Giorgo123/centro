@@ -1,7 +1,8 @@
 # Redirige todas las solicitudes al contenido de la carpeta dist
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !^/dist/
-RewriteRule ^(.*)$ /dist/$1 [L]
+RewriteRule ^(.*)$ /path/to/your/site/dist/$1 [L]
+
 
 # Establece el archivo index dentro de la carpeta dist
-DirectoryIndex index.html index.php
+DirectoryIndex index.html
